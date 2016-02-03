@@ -2,10 +2,10 @@
 
 angular
     .module('chatApp')
-    .directive('login', function () {
+    .directive('deleteMessage', function () {
         return {
             restrict: 'E',
-            templateUrl: 'views/login.html'
+            templateUrl: 'views/deleteMessage.html'
         };
     });
     

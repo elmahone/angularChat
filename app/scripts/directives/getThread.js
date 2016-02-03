@@ -2,10 +2,10 @@
 
 angular
     .module('chatApp')
-    .directive('login', function () {
+    .directive('thread', function () {
         return {
             restrict: 'E',
-            templateUrl: 'views/login.html'
+            templateUrl: 'views/getThread.html'
         };
     });
     

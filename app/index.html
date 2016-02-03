@@ -23,10 +23,52 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    
+
     <div ng-controller="LoginCtrl">
-        <login></login>
+        <login ng-hide="one"></login>
+        <div ng-hide="two">
+            <img ng-src="{{profileImage}}">
+            <h1>{{name}}</h1>
+            <div ng-hide="two" ng-controller="DelUserCtrl">
+                <delete-user></delete-user>
+            </div>
+            <div ng-hide="two" ng-controller="SendMessageCtrl">
+                <send-message></send-message>
+            </div>
+            <div ng-hide="two" ng-controller="AllMessagesCtrl">
+                <all-messages></all-messages>
+            </div>
+            <div ng-hide="two" ng-controller="GetMessageCtrl">
+                <get-message></get-message>
+            </div>
+            <div ng-hide="two" ng-controller="ModifyMessageCtrl">
+                <modify-message></modify-message>
+            </div>
+            <div ng-hide="two" ng-controller="AllThreadsCtrl">
+                <threads></threads>
+            </div>
+            <div ng-hide="two" ng-controller="AllParentsCtrl">
+                <parents></parents>
+            </div>
+            <div ng-hide="two" ng-controller="GetThreadCtrl">
+                <thread></thread>
+            </div>
+            <div ng-hide="two" ng-controller="replyCtrl">
+                <reply></reply>
+            </div>
+            <div ng-hide="two" ng-controller="AllUsersCtrl">
+                <all-users></all-users>
+            </div>
+            <div ng-hide="two" ng-controller="GetUserCtrl">
+                <get-user></get-user>
+            </div>
+            <div ng-hide="two" ng-controller="DelMessageCtrl">
+                <delete-message></delete-message>
+            </div>
+        </div>
     </div>
+
+
 
 
     <!-- build:js(.) scripts/vendor.js -->
@@ -42,9 +84,46 @@
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
+    <!--    controllers -->
     <script src="scripts/controllers/loginCtrl.js"></script>
+    <script src="scripts/controllers/signUpCtrl.js"></script>
+    <script src="scripts/controllers/sendMessageCtrl.js"></script>
+    <script src="scripts/controllers/allMessagesCtrl.js"></script>
+    <script src="scripts/controllers/getMessageCtrl.js"></script>
+    <script src="scripts/controllers/modifyMessageCtrl.js"></script>
+    <script src="scripts/controllers/getThreadsCtrl.js"></script>
+    <script src="scripts/controllers/getParentsCtrl.js"></script>
+    <script src="scripts/controllers/getThreadCtrl.js"></script>
+    <script src="scripts/controllers/replyCtrl.js"></script>
+    <script src="scripts/controllers/AllUsersCtrl.js"></script>
+    <script src="scripts/controllers/getUserCtrl.js"></script>
+    <script src="scripts/controllers/deleteMessageCtrl.js"></script>
+    <script src="scripts/controllers/deleteUserCtrl.js"></script>
+    <!--
+-->
+
+
+    <!--    directives     -->
     <script src="scripts/directives/login.js"></script>
+    <script src="scripts/directives/signUp.js"></script>
+    <script src="scripts/directives/sendMessage.js"></script>
+    <script src="scripts/directives/allMessages.js"></script>
+    <script src="scripts/directives/getMessage.js"></script>
+    <script src="scripts/directives/modifyMessage.js"></script>
+    <script src="scripts/directives/getThreads.js"></script>
+    <script src="scripts/directives/getParents.js"></script>
+    <script src="scripts/directives/getThread.js"></script>
+    <script src="scripts/directives/reply.js"></script>
+    <script src="scripts/directives/allUsers.js"></script>
+    <script src="scripts/directives/getUser.js"></script>
+    <script src="scripts/directives/deleteUser.js"></script>
+    <script src="scripts/directives/deleteMessage.js"></script>
+
+    <!--
+-->
+
     <script src="scripts/services/ajaxFactory.js"></script>
+    <script src="scripts/services/chatService.js"></script>
     <!-- endbuild -->
 </body>
 

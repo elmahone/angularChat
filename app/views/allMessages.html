@@ -1,0 +1,11 @@
+<h4>Get All Messages</h4>
+<button ng-click="getAllMessages()">Get Messages</button>
+<ul>
+    <li ng-repeat="message in allMessages">
+        <h4> {{message.name}} </h4>
+        <p> {{message.message}} </p>
+        <div ng-controller="replyCtrl">
+            <reply></reply>
+        </div>
+    </li>
+</ul>

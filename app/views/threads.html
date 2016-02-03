@@ -1,0 +1,9 @@
+<h4>Get All Threads</h4>
+<button ng-click="getThreads()">Get Threads</button>
+<ul>
+    <li ng-repeat="thread in threads">
+        <h4>{{thread.name}}</h4>
+        <p>{{thread.message}}</p>
+        
+    </li>
+</ul>
