@@ -5,16 +5,17 @@ angular
     .service('ChatService', function () {
         var chatData = {
             user: {},
-            messages: {}
+            message: {}
         };
         chatData.setUser = function (data) {
             this.user = data;
             console.log(this.user);
         };
-        chatData.setMessage = function (data) {
-            this.message = data;
-            console.log(this.message);
+
+        chatData.setFunc = function (nimi, funk) {
+            chatData[nimi] = funk;
         };
+
         return chatData;
 
     });

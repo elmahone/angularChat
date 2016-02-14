@@ -9,11 +9,13 @@ angular.module('chatApp')
                 message: $scope.reply,
                 uID: ChatService.user.uID
             };
-            // kutsu signUp-funktiota AjaxFactorystä
+            console.log(data);
             var request = AjaxFactory.reply(data);
             request.then(function (response) {
                 // tee vastauksella jotain
                 console.log(response.data);
+                angular.element('#replyModal').modal('hide');
+                ChatService.loadThreads();
             }, function (error) {
                 // tee virheellä jotain
                 console.log(error.data);

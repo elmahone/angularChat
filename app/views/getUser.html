@@ -1,7 +1,23 @@
-<h4>Get one User</h4>
-<form>
-    <input type="text" name="userid" placeholder="käyttäjän id" ng-model="id">
-    <button ng-click="getUser()">Get user</button>
-    <br>
-    <h4>{{user.name}}</h4>
-</form>
+<div class="col-md-4">
+
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="media">
+
+                <img class="media-object" ng-src="{{profileImage}}" alt="Image">
+                <div class="media-body">
+                    <h3 class="media-heading text-center">{{name}}</h3>
+                    <br>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#profileImageModal">Change Image</button>
+                        <delete-user></delete-user>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" ng-click="logOut()">Log out</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -11,7 +11,7 @@ angular.module('chatApp')
                 console.log(response.data);
                 $scope.allMessages = response.data;
                 ChatService.setMessage(response.data);
-                console.log(ChatService.chatData.messages)
+                console.log(ChatService.chatData.messages);
             }, function (error) {
                 // tee virheellä jotain
                 console.log(error.data);

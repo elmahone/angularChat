@@ -5,7 +5,8 @@ angular
     .directive('deleteMessage', function () {
         return {
             restrict: 'E',
-            templateUrl: 'views/deleteMessage.html'
+            templateUrl: 'views/deleteMessage.html',
+            controller: 'DelMessageCtrl'
         };
     });
     

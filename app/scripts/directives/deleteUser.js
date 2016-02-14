@@ -5,7 +5,8 @@ angular
     .directive('deleteUser', function () {
         return {
             restrict: 'E',
-            templateUrl: 'views/deleteUser.html'
+            templateUrl: 'views/deleteUser.html',
+            controller:'DelUserCtrl'
         };
     });
     

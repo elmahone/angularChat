@@ -2,19 +2,15 @@
 
 angular.module('chatApp')
     .controller('SaveImageCtrl', function ($scope, AjaxFactory) {
-        $scope.saveImage = function () {
-            // data lomakkeesta
-            var data = {
-                uID:'80',
-                file: $scope.file
-            };
-            // kutsu signUp-funktiota AjaxFactorystä
+
+        $scope.sendImage = function () {
+            var data = new FormData(document.getElementById("image"));
+            
             var request = AjaxFactory.saveImage(data);
+
             request.then(function (response) {
-                // tee vastauksella jotain
                 console.log(response.data);
             }, function (error) {
-                // tee virheellä jotain
                 console.log(error.data);
             });
         };

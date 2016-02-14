@@ -63,9 +63,15 @@ angular
             return $http.delete(urlBase + '/messages/' + args);
         };
 
-        ajaxFunctions.saveImage = function (args) {
-            return $http.post(urlBase + '/images', args);
+        ajaxFunctions.saveImage = function (args, options) {
+            return $http.post(urlBase + '/images', args, options);
         };
+
+        //        ajaxFunctions.saveImage = function (args) {
+        //            return $http.post(urlBase + '/images', args, {
+        //                transformRequest: angular.identity
+        //            });
+        //        };
 
 
         return ajaxFunctions;

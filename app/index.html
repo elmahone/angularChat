@@ -16,6 +16,55 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
 </head>
+<!-- Modals -->
+<div id="profileImageModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-body">
+                <div ng-controller="SaveImageCtrl">
+
+                    <save-image></save-image>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div id="editModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-body">
+                <div ng-controller="ModifyMessageCtrl">
+                    <modify-message></modify-message>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div id="replyModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-body">
+                <div ng-controller="replyCtrl">
+                    <reply></reply>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
 
 <body ng-app="chatApp">
     <!--[if lte IE 8]>
@@ -24,50 +73,51 @@
 
     <!-- Add your site or application content here -->
 
-    <div ng-controller="LoginCtrl">
-        <login ng-hide="one"></login>
-        <div ng-hide="two">
-            <img ng-src="{{profileImage}}">
-            <h1>{{name}}</h1>
-            <div ng-hide="two" ng-controller="DelUserCtrl">
-                <delete-user></delete-user>
+    <div class="container">
+        <div ng-controller="LoginCtrl">
+            <div class="text-center">
+                <login ng-hide="one"></login>
             </div>
-            <div ng-hide="two" ng-controller="SendMessageCtrl">
-                <send-message></send-message>
-            </div>
-            <div ng-hide="two" ng-controller="AllMessagesCtrl">
-                <all-messages></all-messages>
-            </div>
-            <div ng-hide="two" ng-controller="GetMessageCtrl">
-                <get-message></get-message>
-            </div>
-            <div ng-hide="two" ng-controller="ModifyMessageCtrl">
-                <modify-message></modify-message>
-            </div>
-            <div ng-hide="two" ng-controller="AllThreadsCtrl">
-                <threads></threads>
-            </div>
-            <div ng-hide="two" ng-controller="AllParentsCtrl">
-                <parents></parents>
-            </div>
-            <div ng-hide="two" ng-controller="GetThreadCtrl">
-                <thread></thread>
-            </div>
-            <div ng-hide="two" ng-controller="replyCtrl">
-                <reply></reply>
-            </div>
-            <div ng-hide="two" ng-controller="AllUsersCtrl">
-                <all-users></all-users>
-            </div>
-            <div ng-hide="two" ng-controller="GetUserCtrl">
-                <get-user></get-user>
-            </div>
-            <div ng-hide="two" ng-controller="DelMessageCtrl">
-                <delete-message></delete-message>
+            <div ng-hide="two">
+                <div class="row">
+                    <get-user></get-user>
+                    <div class="col-md-8">
+                        <div ng-hide="two" ng-controller="AllThreadsCtrl">
+                            <div ng-hide="two" ng-controller="SendMessageCtrl">
+                                <send-message></send-message>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <threads collection="threads"></threads>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <!--
+                        <div ng-hide="two" ng-controller="AllMessagesCtrl">
+                            <all-messages></all-messages>
+                        </div>
+                        <div ng-hide="two" ng-controller="GetMessageCtrl">
+                            <get-message></get-message>
+                        </div>
+
+                        <div ng-hide="two" ng-controller="AllParentsCtrl">
+                            <parents></parents>
+                        </div>
+                        <div ng-hide="two" ng-controller="GetThreadCtrl">
+                            <thread></thread>
+                        </div>
+
+                        <div ng-hide="two" ng-controller="AllUsersCtrl">
+                            <all-users></all-users>
+                        </div>
+-->
+
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
 
 
 
@@ -99,8 +149,8 @@
     <script src="scripts/controllers/getUserCtrl.js"></script>
     <script src="scripts/controllers/deleteMessageCtrl.js"></script>
     <script src="scripts/controllers/deleteUserCtrl.js"></script>
-    <!--
--->
+    <script src="scripts/controllers/saveImageCtrl.js"></script>
+    <script src="scripts/controllers/getMessageCtrl.js"></script>
 
 
     <!--    directives     -->
@@ -118,6 +168,8 @@
     <script src="scripts/directives/getUser.js"></script>
     <script src="scripts/directives/deleteUser.js"></script>
     <script src="scripts/directives/deleteMessage.js"></script>
+    <script src="scripts/directives/saveImage.js"></script>
+    <script src="scripts/directives/message.js"></script>
 
     <!--
 -->

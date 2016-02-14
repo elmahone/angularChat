@@ -1,8 +1,23 @@
-<h4>Get one Thread</h4>
-<form>
-    <input type="text" name="messageid" placeholder="ketjun viestin id esim 67" ng-model="id">
-    <button ng-click="getThread()">Get Thread</button>
-    <br>
-    <h4>{{thread.name}}</h4>
-    <p>{{thread.message}}</p>
-</form>
+<div class="media">
+    <div class="pull-left">
+        <img class="media-object img-thumbnail" ng-src="{{thread.thumbnail}}" alt="Image">
+
+    </div>
+    <div class="media-body" ng-controller="GetMessageCtrl">
+        <h4 class="media-heading">{{thread.name}}</h4>
+        <p class="time">{{thread.time * 1000 | date}} </p>
+        <p>{{thread.message}}</p>
+
+
+
+        <div class="btn-group pull-right" ng-if="thread.uID != userID">
+            <button type="button" class="btn btn-default btn-xs" data-toggle="modal" ng-click="prepare(thread)" data-target="#replyModal">Reply</button>
+        </div>
+        <div class="btn-group pull-right" ng-if="thread.uID == userID">
+            <button type="button" class="btn btn-default btn-xs" data-toggle="modal" ng-click="prepare(thread)" data-target="#replyModal">Reply</button>
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" ng-click="prepare(thread)" data-target="#editModal">Edit</button>
+            <delete-message></delete-message>
+        </div>
+    </div>
+
+</div>
